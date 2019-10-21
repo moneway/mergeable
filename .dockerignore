@@ -1,0 +1,11 @@
+/Dockerfile
+/.dockerignore
+
+/.git*
+/.circleci
+
+/*.png
+/*.gif
+/.env*
+/node_modules/
+/__tests__/
