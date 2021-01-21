@@ -1,13 +1,13 @@
-FROM node:12.16.0
+FROM node:12.16.0-alpine
 
 WORKDIR /app
-
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm ci --only=production
 
-COPY . .
+COPY . ./
 
-ENV PORT=${PORT:-3000}
 USER 1000:1000
 
-CMD ./node_modules/probot/bin/probot.js run --port $PORT ./index.js
+EXPOSE 3000
+ENTRYPOINT ["/app/node_modules/.bin/probot", "run", "./index.js"]
+CMD ["--port=3000", "--webhook-path=/mergeable"]

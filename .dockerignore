@@ -1,4 +1,11 @@
-npm-debug.log
-*.pem
-.env
-coverage
+/Dockerfile
+/.dockerignore
+/.git*
+/.circleci
+/.env(
+/coverage
+/*.pem
+/npm-debug.log
+/*.gif
+/node_modules/
+/__tests__/
